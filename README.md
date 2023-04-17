@@ -29,7 +29,7 @@ Download and use as a Python package:
 ```bash 
 pip install git+https://github.com/user1342/PocketSmali.git
 ```
-PocketSmali has been tested on *Windows 11* and *Ubuntu 22.042 LTS*.
+PocketSmali has been tested on *Windows 11* and *Ubuntu 22.04.2 LTS*.
 
 # 📲 Emulating SMALI
 
