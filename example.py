@@ -15,5 +15,6 @@ code = '''
     return-object v1
 .end method'''
 
-emulator = Emulator(is_verbose=True)
+emulator = Emulator()
 emulator.emulate_smali_code(code)
+print(str(emulator))
