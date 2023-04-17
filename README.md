@@ -2,7 +2,7 @@
     <img width=100% src="cover.gif">
   </a>
 </p>
-<b><p align="center"> 🤖 A modular and extendable Python tool for emulating simple SMALI methods. 📱 </p></b>
+<b><p align="center"> 🤖 A modular and extendable Python tool for emulating simple SMALI code. 📱 </p></b>
 
 <br>
 <div align="center">
