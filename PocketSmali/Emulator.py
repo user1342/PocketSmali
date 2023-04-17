@@ -31,6 +31,9 @@ class Emulator():
     runtime_env = None
     smali_files_root_dir = None
 
+    def __str__(self):
+        return "Runtime environment - registers '{}', string pool '{}'".format(self.runtime_env.registers, self.runtime_env.string_pool)
+
     def __init__(self, smali_files_root_dir = None, is_verbose = False, is_enforcing = False):
         self.is_enforcing = is_enforcing
         self.is_verbose = is_verbose
@@ -45,6 +48,9 @@ class Emulator():
 
     def add_stub(self, path, function=None):
         self.stubs[path] = function
+
+    def emulate_smali_instruction(self, instruction):
+        self._parse_line_of_smali_code(instruction)
 
     def emulate_smali_method(self, smali_file_path,  method_name, arguments = None):
         smali_method = self._get_method_from_smali_file(smali_file_path,  method_name)
@@ -133,9 +139,9 @@ class Emulator():
                     full_path = None
         if directory == None:
             if self.is_enforcing:
-                raise Exception("Couldnt find directory for {}".format(partial_path))
+                raise Exception("Couldn't find directory for {}".format(partial_path))
             else:
-                print("Couldnt find directory for {}".format(partial_path))
+                print("Couldn't find directory for {}".format(partial_path))
 
         return full_path
 
@@ -181,7 +187,7 @@ class Emulator():
 
 
         if self.is_verbose:
-            print("Runtime enviroment - registers '{}', string pool '{}'".format(self.runtime_env.registers, self.runtime_env.string_pool))
+            print("Runtime environment - registers '{}', string pool '{}'".format(self.runtime_env.registers, self.runtime_env.string_pool))
 
     def _parse_paramiter(self, line, paramiter):
 
