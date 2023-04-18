@@ -12,6 +12,10 @@ from PocketSmali.opcode_handlers.local_operand_handler import local_operand_hand
 # Define Emulator class
 class Emulator():
 
+    # Dictionary of breakpoints
+    # Key should be a line number, while value should be a function that takes an initialised emulator class
+    breakpoints = {}
+
     # Dictionary to map opcode handlers to their respective opcodes
     dict_of_opcode_handlers ={
         "const-string": const_string_operand_handler,
@@ -180,6 +184,13 @@ class Emulator():
             return
         elif line.startswith(".line"):
             # Handle lines starting with ".line" if self.is_verbose flag is True
+
+            instruction, line_num = line.split(" ")
+            breakpoints_as_list = list(self.breakpoints.keys())
+            if int(line_num) in breakpoints_as_list:
+                function = self.breakpoints[int(line_num)]
+                function(self)
+
             if self.is_verbose:
                 print("Emulating line '{}'".format(line.split(".line")[1]))
                 return

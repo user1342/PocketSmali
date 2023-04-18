@@ -15,6 +15,11 @@ code = '''
     return-object v1
 .end method'''
 
+def update_reg_v0(emulator):
+    emulator.runtime_env.set_register("v0","string-pool-2")
+
 emulator = Emulator()
+emulator.breakpoints[29] = update_reg_v0
+emulator.add_stub("android/util/Log")
 emulator.emulate_smali_code(code)
 print(str(emulator))
