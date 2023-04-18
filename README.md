@@ -23,7 +23,7 @@ Instructions covered:
 - ```invoke*``` : Emulates the invocation of a method in SMALI code, including different variants such as ```invoke-virtual```, ```invoke-direct```, ```invoke-static```, and others.
 - ```move-result*``` : Emulates the handling of the result from a method invocation in SMALI code, including different variants such as ```move-result```, ```move-result-object```, ```move-result-wide```, and others.
 
-# ➡️ Instalation
+# ➡️ Installation
 
 Download and use as a Python package:
 ```bash 
@@ -68,8 +68,7 @@ Emulating from a SMALI file:
 from PocketSmali.Emulator import Emulator
 
 emulator = Emulator(is_verbose=True, smali_files_root_dir=r"MyApplication3\app\build\outputs\apk\debug\app-debug")
-emulator.emulate_smali_method(r"MyApplication3\app\build\outputs\apk\debug\app-debug\smali_classes3\com\example"
-                              r"MyApplication3\app\build\outputs\apk\debug\app-debug\smali_classes3\com\example\myapplication\MainActivity.smali","onCreate") 
+emulator.emulate_smali_method(r"MyApplication3\app\build\outputs\apk\debug\app-debug\smali_classes3\com\example\myapplication\MainActivity.smali","onCreate") 
 ```
 
 # 🙏 Contributions
