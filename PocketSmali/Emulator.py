@@ -62,6 +62,8 @@ class Emulator():
     # Method to explain a Smali method
     def explain_smali_method(self, smali_file_path,  method_name, arguments = None):
         smali_method = self._get_method_from_smali_file(smali_file_path,  method_name)
+        raise Exception("Not implemented")
+        #TODO
 
     # Method to emulate a block of Smali code
     def emulate_smali_code(self, smali_code, arguments = None):
@@ -69,7 +71,8 @@ class Emulator():
 
     # Method to explain a block of Smali code
     def explain_smali_code(self, smali_code, arguments = None):
-        pass
+        raise Exception("Not implemented")
+        #TODO
 
     def _get_method_from_smali_file(self, path_to_smali_file, method_name):
         # Check if the path to the smali file is in the stubs dictionary
