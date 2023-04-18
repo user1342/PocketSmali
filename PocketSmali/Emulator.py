@@ -54,6 +54,10 @@ class Emulator():
     def add_stub(self, path, function=None):
         self.stubs[path] = function
 
+    # Add a breakpoint to the SMALI emulation based on the .line instruction.
+    def add_breakpoint(self, line_num, function):
+        self.breakpoints[line_num] = function
+
     # Method to emulate a single Smali instruction
     def emulate_smali_instruction(self, instruction):
         self._parse_line_of_smali_code(instruction)
