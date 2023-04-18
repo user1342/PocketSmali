@@ -2,7 +2,7 @@
     <img width=100% src="cover.gif">
   </a>
 </p>
-<b><p align="center"> 🤖 A modular and extendable Python tool for emulating simple SMALI methods. 📱 </p></b>
+<b><p align="center"> 🤖 A modular and extendable Python tool for emulating simple SMALI code. 📱 </p></b>
 
 <br>
 <div align="center">
@@ -29,7 +29,7 @@ Download and use as a Python package:
 ```bash 
 pip install git+https://github.com/user1342/PocketSmali.git
 ```
-PocketSmali has been tested on *Windows 11* and *Ubuntu 22.042 LTS*.
+PocketSmali has been tested on *Windows 11* and *Ubuntu 22.04.2 LTS*.
 
 # 📲 Emulating SMALI
 
@@ -76,7 +76,7 @@ emulator.emulate_smali_method(r"MyApplication3\app\build\outputs\apk\debug\app-d
 PocketSmali is both extendable and modular. To add handlers for other SMALI instructions, create a Python file in the ```opcode_handlers``` subfolder. Inside of this file, create a method that handles a specific instruction type - this method should take the parameters ```(opcode, operands, runtime_env, emulator)```. Then add to the ```dict_of_opcode_handlers``` dictionary in the Emulator class with the key being the name of the instruction and the value being a reference to your created method for handling it.
 
 # ⚖️ Code of Conduct
-PocketSmali follows the Contributor Covenant Code of Conduct. Please make sure [to review](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md). and adhere to this code of conduct when contributing to Obfu[DE]scate.
+PocketSmali follows the Contributor Covenant Code of Conduct. Please make sure [to review](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) and adhere to this code of conduct when contributing to Obfu[DE]scate.
 
 # 🐛 Bug Reports and Feature Requests
 If you encounter a bug or have a suggestion for a new feature, please open an issue in the GitHub repository. Please provide as much detail as possible, including steps to reproduce the issue or a clear description of the proposed feature. Your feedback is valuable and will help improve PocketSmali for everyone.

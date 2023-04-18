@@ -21,7 +21,7 @@ class Emulator():
         "move-result": generic_move_handler
     }
 
-    stubs = {}  # Dictionary to store stubs (empty methods)
+    stubs = {}  # Dictionary to store stubs
 
     is_verbose = False
     is_enforcing = False
@@ -46,7 +46,7 @@ class Emulator():
         else:
             self.smali_files_root_dir = smali_files_root_dir
 
-    # Method to add a stub (empty method) to the stubs dictionary
+    # Method to add a stub to the stubs dictionary
     def add_stub(self, path, function=None):
         self.stubs[path] = function
 
