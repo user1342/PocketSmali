@@ -61,6 +61,7 @@ code = '''
 .end method'''
 
 emulator = Emulator(is_verbose=True)
+emulator.add_stub("android/util/Log")
 emulator.emulate_smali_code(code)
 ```
 Emulating from a SMALI file:
