@@ -45,8 +45,7 @@ class Emulator():
         self.smali_files_root_dir = smali_files_root_dir
         if smali_files_root_dir == None:
             self.smali_files_root_dir = os.getcwd()
-            warnings.warn("No 'smali_files_root_dir' set, defaulting to CWD. This may have unintended behaviour. This "
-                          "should be set to the root dir of your apps SMALI code.")
+            warnings.warn("No 'smali_files_root_dir' set, defaulting to CWD. This may have unintended behaviour. This should be set to the root dir of your apps SMALI code.")
         else:
             self.smali_files_root_dir = smali_files_root_dir
 
@@ -170,6 +169,13 @@ class Emulator():
                     full_path = None
         # Check if directory is None
         if directory == None:
+
+            if partial_path in self.stubs:
+                # If it is, check if the stub function is not None, and if so, call it
+                if self.stubs[partial_path] != None:
+                    self.stubs[partial_path]()
+                return None
+
             # If yes, raise an exception or print an error message based on self.is_enforcing flag
             if self.is_enforcing:
                 raise Exception("Couldn't find directory for {}".format(partial_path))
